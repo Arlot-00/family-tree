@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Family Time Capsule</title>
+    <style>
+        body { font-family: 'Georgia', serif; background-color: #f4f1ea; color: #2c2c2c; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #5a3e2b; border-bottom: 2px solid #5a3e2b; padding-bottom: 10px; }
+        .photo-box { background: white; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; margin: 20px 0; }
+        .photo-box img { max-width: 100%; height: auto; border: 1px solid #ddd; }
+        #secret-gate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #2c2c2c; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; text-align: center; padding: 20px; }
+        input, button { padding: 12px; margin-top: 15px; font-size: 16px; border-radius: 5px; border: none; }
+        button { background-color: #8c6239; color: white; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="secret-gate">
+        <h2>🔒 Family Security Check</h2>
+        <p>To view our grandfather's history, answer the family password:</p>
+        
+        <input type="text" id="password-input" placeholder="where is your ancestors from?">
+        
+        <button onclick="checkPassword()">Unlock Archive</button>
+        <p id="error-msg" style="color: #ff6b6b; margin-top: 10px; display: none;">Incorrect. Only family members may pass.</p>
+    </div>
+
+
+    <h1>The Ancestry of Arlot-00</h1>
+    <p>Welcome, grandchild. This website was built to make sure you always know where you came from, even after I am gone.</p>
+    
+    <h3>Grandfather's Story</h3>
+    <p>Write your memories, stories, dates, and names here. This text will sit on Microsoft's servers safely for decades.</p>
+
+    <p>👇 FUTURE FAMILY MEMBERS: YOU CAN ADD NEW PARAGRAPHS RIGHT UNDER THIS LINE! 👇</p>
+    <p>Type a new story here...</p>
+
+
+    <div class="photo-box">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500" alt="Grandfather">
+        <p><em>Grandfather, taken around the year 2026.</em></p>
+    </div>
+
+
+    <script>
+        function checkPassword() {
+            var userInput = document.getElementById("password-input").value.toLowerCase().trim();
+            
+            // STEP 2: CHANGE YOUR SECRET PASSWORD BELOW (Keep it lowercase)
+            var correctPassword = "pizza"; 
+
+            if (userInput === correctPassword) {
+                document.getElementById("secret-gate").style.display = "none";
+            } else {
+                document.getElementById("error-msg").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
